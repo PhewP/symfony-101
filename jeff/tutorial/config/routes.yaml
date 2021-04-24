@@ -8,10 +8,10 @@ app_lucky_number:
 
 
     # Definción sin anotaciones
-blog_list:
-    path: /blog 
-    controller: App\Controller\BlogController::list
+# blog_list:
+#     path: /blog 
+#     controller: App\Controller\BlogController::list
 
-blig_show:
-    path: /blog/{slug}
-    controller: App\Controller\BlogController::show
+# blig_show:
+#     path: /blog/{slug}
+#     controller: App\Controller\BlogController::show

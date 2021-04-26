@@ -8,6 +8,14 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class BlogController extends AbstractController {
+
+
+    /**
+     * @Route("/blog/{page}", name="blog_index", defaults={"page": 1, "title": "Hello world"})
+     */
+    public function index(int $page, string $title): Response {
+        // ..
+    }
     
     /**
      * @Route("/blog", name="blog_list", requirements={"page"="\d+"}, priority=2)

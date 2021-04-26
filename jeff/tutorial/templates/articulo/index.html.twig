@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articulo index{% endblock %}
+
+{% block body %}
+    <h1>Articulo index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Descripcion</th>
+                <th>Cuerpo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for articulo in articulos %}
+            <tr>
+                <td>{{ articulo.id }}</td>
+                <td>{{ articulo.titulo }}</td>
+                <td>{{ articulo.descripcion }}</td>
+                <td>{{ articulo.cuerpo }}</td>
+                <td>
+                    <a href="{{ path('articulo_show', {'id': articulo.id}) }}">show</a>
+                    <a href="{{ path('articulo_edit', {'id': articulo.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('articulo_new') }}">Create new</a>
+{% endblock %}

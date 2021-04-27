@@ -5,6 +5,13 @@
 {% block body %}
     <h1>Articulo index</h1>
 
+    {% if is_granted("ROLE_USER") %}
+        <button type="button" class="btn btn-primary">{{ app.user.username }}</button>
+        <a href="{{ path('app_logout')}}"><img src={{asset('/img/logout.png')}} alt="" width="45" height="45"></a>
+    {% endif %}
+
+    {# <img src="{{url('/img/logout.png')}}" alt="" width="45" height="45"> #}
+
     <table class="table">
         <thead>
             <tr>

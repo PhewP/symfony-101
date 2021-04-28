@@ -1,0 +1,7 @@
+{
+    "require": {
+        "symfony/security-bundle": "^5.2",
+        "knplabs/knp-paginator-bundle": "^5.4",
+        "symfony/flex": "^1.12"
+    }
+}

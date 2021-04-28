@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for articulo in articulos %}
+        {% for articulo in pagination %}
             <tr>
                 <td>{{ articulo.id }}</td>
                 <td>{{ articulo.titulo }}</td>
@@ -43,4 +43,9 @@
     </table>
 
     <a href="{{ path('articulo_new') }}">Create new</a>
+    
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
 {% endblock %}

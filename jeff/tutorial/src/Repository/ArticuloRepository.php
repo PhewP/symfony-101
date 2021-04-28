@@ -19,6 +19,14 @@ class ArticuloRepository extends ServiceEntityRepository
         parent::__construct($registry, Articulo::class);
     }
 
+    public function searchAllArticles() {
+        return $this->getEntityManager()
+            ->createQuery('
+            SELECT articulo.id, articulo.titulo, articulo.descripcion, articulo.cuerpo
+            FROM App:Articulo articulo
+            ');
+    }
+
     // /**
     //  * @return Articulo[] Returns an array of Articulo objects
     //  */
